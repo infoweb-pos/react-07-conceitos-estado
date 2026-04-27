@@ -1,5 +1,7 @@
 # Hook `useState` — Tutorial introdutório
 
+[código-fonte](https://github.com/infoweb-pos/react-07-conceitos-estado/releases/tag/hook-useState)
+
 ## Objetivo
 
 Demonstrar o uso do hook `useState` para gerenciar estado de componentes React, criando um formulário que:
