@@ -15,8 +15,6 @@
    - useReducer
    - useRef
    - useMemo
-2. Estado com hooks da comunidade
-   - React Hook Form
 ---
 ## Atividade
 1. FIXME
