@@ -53,14 +53,14 @@ export default function Contador() {
 ### 2.1 Criar o projeto Next.js
 
 ```bash
-npx create-next-app@latest meu-app \
+npx create-next-app@latest usestate-exemplo \
   --typescript \
   --tailwind \
   --eslint \
   --app \
   --src-dir \
   --import-alias "@/*"
-cd meu-app
+cd usestate-exemplo
 ```
 
 ### 2.2 Instalar e configurar o shadcn/ui
