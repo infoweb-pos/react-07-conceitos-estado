@@ -11,10 +11,7 @@
 ## Notas de aula
 1. Estado padrão do react
    - [useState](use-state.md)
-   - useContext
-   - useReducer
+   - [useContext](use-context.md)
+   - [useReducer](use-reducer.md)
    - useRef
    - useMemo
----
-## Atividade
-1. FIXME
