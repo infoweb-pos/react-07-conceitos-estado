@@ -9,6 +9,7 @@ export type Post = {
     dislikes: number;
   };
   views: number;
+  isDeleted?: boolean;
 };
 
 export type PostsResponse = {

@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Post, PostsResponse } from "@/types/post";
+import { api } from "@/services/api";
 
 const POSTS_ENDPOINT = "https://dummyjson.com/posts?limit=12";
 
@@ -25,14 +26,9 @@ export default function Home() {
     setError(null);
 
     try {
-      const response = await fetch(POSTS_ENDPOINT, { signal });
+      const publicacoes = await api.getAllPosts();
+      setPosts(publicacoes);
 
-      if (!response.ok) {
-        throw new Error(`Erro ao buscar posts: ${response.status}`);
-      }
-
-      const data: PostsResponse = await response.json();
-      setPosts(data.posts);
     } catch (fetchError) {
       if (
         fetchError instanceof DOMException &&
