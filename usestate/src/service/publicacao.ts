@@ -104,20 +104,29 @@ let publicacoes: Publicacao[] = [
     }
 ];
 
-export const getPublicacoes = async (): Promise<Publicacao[]> => publicacoes;
+export const getPublicacoes = async (): Promise<Publicacao[]> => {
+    // return publicacoes
+    const stored = localStorage.getItem("publicacoes");
+    return stored ? JSON.parse(stored) : [];
+};
 
 export const postPublicacao = async (publicacao: Publicacao): Promise<Publicacao> => {
-    publicacoes = [...publicacoes, publicacao];
+    let pub = await getPublicacoes();
+    localStorage.setItem("publicacoes", JSON.stringify([...pub, publicacao]));
     return publicacao;
 };
 
 export const putPublicacao = async (id: number, publicacao: Publicacao): Promise<Publicacao> => {
-    publicacoes = publicacoes.map((p) => (p.id === id ? publicacao : p));
+    let pub = await getPublicacoes();
+    pub = pub.map((p) => (p.id === id ? publicacao : p));
+    localStorage.setItem("publicacoes", JSON.stringify(pub));
     return publicacao;
 };
 
 export const deletePublicacao = async (id: number): Promise<void> => {
-    publicacoes = publicacoes.filter((p) => p.id !== id);
+    let pub = await getPublicacoes();
+    pub = pub.filter((p) => p.id !== id);
+    localStorage.setItem("publicacoes", JSON.stringify(pub));
     return void 0;
 };
 
